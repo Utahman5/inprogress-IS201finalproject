@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class="navbar">
+        <a href="file:///C:/Users/joshu/OneDrive/Desktop/IS%20201/Final%20Project/index.html">Return to Job Resume</a>
+        <a href="file:///C:/Users/joshu/OneDrive/Desktop/IS%20201/Final%20Project/TenBestThings.html">Ten Best Things</a>
+    <title>Guess the Number Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .game-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        input {
+            padding: 0.5rem;
+            font-size: 1rem;
+            width: 100px;
+            margin-right: 0.5rem;
+        }
+        button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #message {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        #attempts {
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Guess the Number</h1>
+        <p>I'm thinking of a number between 1 and 100. Can you guess it?</p>
+        <input type="number" id="guessInput" min="1" max="100">
+        <button onclick="checkGuess()">Guess</button>
+        <p id="message"></p>
+        <p id="attempts"></p>
+    </div>
+
+    <script>
+        let targetNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+        const maxAttempts = 10;
+
+        function checkGuess() {
+            const guess = parseInt(document.getElementById('guessInput').value);
+            const messageElement = document.getElementById('message');
+            const attemptsElement = document.getElementById('attempts');
+
+            if (isNaN(guess) || guess < 1 || guess > 100) {
+                messageElement.textContent = "Please enter a valid number between 1 and 100.";
+                return;
+            }
+
+            attempts++;
+
+            if (guess === targetNumber) {
+                messageElement.textContent = `Congratulations! You guessed the number in ${attempts} attempts!`;
+                messageElement.style.color = "green";
+                document.querySelector('button').disabled = true;
+            } else if (attempts >= maxAttempts) {
+                messageElement.textContent = `Game over! The number was ${targetNumber}.`;
+                messageElement.style.color = "red";
+                document.querySelector('button').disabled = true;
+            } else if (guess < targetNumber) {
+                messageElement.textContent = "Too low! Try a higher number.";
+                messageElement.style.color = "blue";
+            } else {
+                messageElement.textContent = "Too high! Try a lower number.";
+                messageElement.style.color = "orange";
+            }
+
+            attemptsElement.textContent = `Attempts: ${attempts}/${maxAttempts}`;
+            document.getElementById('guessInput').value = '';
+        }
+    </script>
+</body>
+</html>
+
+
+
