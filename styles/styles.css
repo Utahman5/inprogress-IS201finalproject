@@ -15,6 +15,7 @@ h1, h2, h3, h4, h5, h6{
     color:black;
     align-items: center;
     font-family: 'Times New Roman', Times, serif;
+
     
 }
 .main-content{
@@ -70,13 +71,51 @@ h1, h2, h3, h4, h5, h6{
     justify-content: center;
     align-items: center;
     background-color: #090d11;
-    color: #fff;
+    color: #818181;
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s;
   }
   
   .back-to-top:hover {
-    background-color: #0056b3;
+    background-color: #0c0c0c;
   }
+}
   
+.back-to-top:hover {
+  color: #f1f1f1;
+}
+  
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #0f0e0e;
+    padding: 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 200px; /* Width of the sidebar */
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.tableauPlaceholder {
+    max-width: 100%;
+    height: auto;
+}
+
