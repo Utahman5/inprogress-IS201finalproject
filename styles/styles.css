@@ -3,6 +3,7 @@ body {
     color: black;
     font-family: 'Times New Roman', Times, serif;
     font-style: italic;
+    font-size: 18px;
 }
 body {
     display: flex;
