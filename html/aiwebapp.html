@@ -6,13 +6,32 @@
     <title>Guess the Number Game</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            margin: 0;
+            background-color: rgb(240, 187, 187);
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #141313;
+            padding: 20px;
+            height: 100vh;
+        }
+        .sidebar a {
+            display: block;
+            color: #f3f2f2;
+            padding: 10px;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+        .main-content {
+            flex-grow: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
         }
         .game-container {
             background-color: white;
@@ -26,7 +45,7 @@
         }
         input {
             padding: 0.5rem;
-            font-size: 1rem;
+            font-size: rem;
             width: 100px;
             margin-right: 0.5rem;
         }
@@ -53,17 +72,19 @@
 </head>
 <body>
     <div class="sidebar">
-        <a href="file:///C:/Users/joshu/OneDrive/Desktop/IS%20201/Final%20Project/index.html">Return to Resume</a><br><br>
-        <a href="file:///C:/Users/joshu/OneDrive/Desktop/IS%20201/Final%20Project/TenBestThings.html">Ten Best Things</a><br><br>
+        <a href="file:///C:/Users/joshu/OneDrive/Desktop/IS%20201/Final%20Project/index.html">Return to Resume</a>
+        <a href="file:///C:/Users/joshu/OneDrive/Desktop/IS%20201/Final%20Project/TenBestThings.html">Ten Best Things</a>
         <a href="file:///C:/Users/joshu/OneDrive/Desktop/IS%20201/Final%20Project/Tableau.html">Check Out This Cool Tableau Chart</a>
     </div>
-    <div class="game-container">
-        <h1>Guess the Number</h1>
-        <p>I'm thinking of a number between 1 and 100. Can you guess it?</p>
-        <input type="number" id="guessInput" min="1" max="100">
-        <button onclick="checkGuess()">Guess</button>
-        <p id="message"></p>
-        <p id="attempts"></p>
+    <div class="main-content">
+        <div class="game-container">
+            <h1>Guess the Number</h1>
+            <p>I'm thinking of a number between 1 and 100. Can you guess it?</p>
+            <input type="number" id="guessInput" min="1" max="100">
+            <button onclick="checkGuess()">Guess</button>
+            <p id="message"></p>
+            <p id="attempts"></p>
+        </div>
     </div>
 
     <script>
@@ -105,6 +126,5 @@
     </script>
 </body>
 </html>
-
 
 
